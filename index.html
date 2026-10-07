@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kahf Studio — premium trend experience</title>
+  <meta name="description" content="A premium, production-ready single-page website exploring the Kahf trend with editorial hierarchy, refined visuals, and thoughtful interactions." />
+  <style>
+    :root{
+      --bg: #0e0e12;
+      --fg: #e9e6f4;
+      --muted: #c9c4d6;
+      --primary: #7a5cff;
+      --accent: #22d1ee;
+      --card: rgba(255,255,255,.04);
+      --border: rgba(255,255,255,.12);
+      --gradA: rgba(122,92,255,.25);
+      --gradB: rgba(34,209,238,.25);
+    }
+    html,body{margin:0;padding:0;height:100%}
+    body{
+      font-family: system-ui,-apple-system, "Segoe UI", Roboto, Inter, Arial;
+      color: var(--fg);
+      background: radial-gradient(1000px circle at 20% -10%, rgba(122,92,255,.15), transparent 40%),
+                  radial-gradient(800px circle at 100% 0%, rgba(34,209,238,.15), transparent 40%),
+                  linear-gradient(#0b0b10,#0b0b10 60%, #0b0b10);
+      min-height:100%;
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    header{position:sticky;top:0;z-index:50;background: rgba(8,8,12,.92);border-bottom:1px solid var(--border);backdrop-filter: saturate(1.2) blur(6px)}
+    .nav{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:14px 20px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand svg{width:28px;height:28px}
+    .brand-name{font-weight:600;letter-spacing:.4px}
+    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:20px}
+    nav a{padding:8px 12px;border-radius:8px}
+    nav a:focus{outline:2px solid #fff;outline-offset:2px}
+    .cta {background: linear-gradient(135deg, var(--primary), #a058ff); color:white; padding:10px 16px; border-radius:999px; display:inline-flex; align-items:center; gap:8px; box-shadow: 0 6px 20px rgba(122,92,255,.45); transition: transform .2s ease}
+    .cta:hover{transform: translateY(-1px)}
+    .hero{position:relative; padding:88px 20px 120px; overflow:hidden}
+    .grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:stretch}
+    .hero-copy h1{font-size: clamp(28px,5vw,56px); line-height:1.03; margin:0 0 14px}
+    .hero-copy p{color:var(--muted); font-size: clamp(14px,2.5vw,18px); max-width:50ch}
+    .hero-visual{border-radius:20px;background: linear-gradient(135deg, rgba(122,92,255,.25), rgba(34,209,238,.25)); box-shadow: inset 0 1px 0 rgba(255,255,255,.15); padding:28px; display:grid;place-items:center;min-height:320px; position:relative; overflow:hidden}
+    .shape{position:absolute; filter: blur(40px); opacity:.5}
+    .shape.a{width:420px;height:420px;background:radial-gradient(circle at 30% 30%, #8b5cf6, transparent 40%), radial-gradient(circle at 60% 60%, #22d3ee, transparent 40%); left:-140px; top:-80px}
+    .shape.b{width:520px;height:520px;background: radial-gradient(circle at 70% 70%, #34d399, transparent 40%), radial-gradient(circle at 30% 60%, #f472b6, transparent 40%); right:-180px; bottom:-120px}
+    .kpi{display:flex;gap:20px;flex-wrap:wrap;margin-top:14px}
+    .kpi .card{background:var(--card); border:1px solid var(--border); border-radius:14px;padding:12px 14px; min-width:120px}
+    .kpi .num{font-family: ui-monospace,SFMono-Regular,monospace; font-weight:700; font-size:18px}
+    .kpi .label{font-size:12px;color:var(--muted)}
+    section{padding:72px 20px}
+    .section-inner{max-width:1100px;margin:0 auto}
+    .lead{font-size:14px;letter-spacing:.4px;color:var(--muted);text-transform:uppercase}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    article{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:20px; transition: transform .25s ease, background .25s ease}
+    article h3{margin:0 0 8px;font-size:18px}
+    article p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
+    .card-cta{margin-top:12px;display:inline-flex;gap:8px;align-items:center}
+    .card{display:flex;flex-direction:column;gap:8px}
+    .footer{border-top:1px solid var(--border); padding:28px 20px; color:var(--muted)}
+    .footer a{color:#cbd5e1}
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .hero{padding:48px 16px}
+    }
+    @media (prefers-reduced-motion: reduce){
+      *{animation: none !important; transition: none !important}
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->;<script async src='https://www.googletagmanager.com/gtag/js?id=G-H4VF7WNZRR'></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-H4VF7WNZRR');</script>
+</head>
+<body>
+  <header aria-label="Main navigation">
+    <div class="nav" role="navigation">
+      <div class="brand" aria-label="Kahf Brand">
+        <svg viewBox="0 0 64 64" aria-label="Kahf mark">
+          <defs>
+            <linearGradient id="grad" x1="0" x2="1" y1="0" y2="1">
+              <stop stop-color="#7a5cff" offset="0"/>
+              <stop stop-color="#22d1ee" offset="1"/>
+            </linearGradient>
+          </defs>
+          <circle cx="32" cy="32" r="26" fill="url(#grad)" opacity="0.25"/>
+          <path d="M12 34c6-14 26-14 34 0" stroke="url(#grad)" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <circle cx="32" cy="32" r="8" fill="url(#grad)"/>
+        </svg>
+        <span class="brand-name" style="font-weight:700; letter-spacing:.5px;">Kahf Studio</span>
+      </div>
+      <nav aria-label="Site navigation">
+        <ul>
+          <li><a href="#overview" aria-label="Overview section">Overview</a></li>
+          <li><a href="#insights" aria-label="Insights section">Insights</a></li>
+          <li><a href="#work" aria-label="Work section">Work</a></li>
+          <li><a href="#cta" class="cta" aria-label="Primary action">Explore Kahf</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Hero">
+      <div class="grid" id="overview">
+        <div class="hero-copy">
+          <h1>Kahf: a premium brand concept for a trend at scale</h1>
+          <p>We translate seismic search trends into a disciplined narrative and design system. Kahf is designed for forward-thinking brands that want editorial clarity, data credibility, and premium craft without the clutter of generic templates.</p>
+          <div class="kpi" aria-label="Key metrics">
+            <div class="card">
+              <div class="num">5,000</div>
+              <div class="label">monthly searches for kahf</div>
+            </div>
+            <div class="card">
+              <div class="num">+1,000%</div>
+              <div class="label">increase in interest</div>
+            </div>
+            <div class="card">
+              <div class="num">Top 1</div>
+              <div class="label">trend in its category</div>
+            </div>
+          </div>
+        </div>
+        <aside class="hero-visual" aria-label="Trend visual">
+          <svg width="100%" height="100%" viewBox="0 0 800 520" role="img" aria-label="Trend line visualization">
+            <defs>
+              <linearGradient id="lineGrad" x1="0" x2="1" y1="0" y2="0">
+                <stop stop-color="#7a5cff" offset="0"/>
+                <stop stop-color="#22d1ee" offset="1"/>
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="800" height="520" fill="url(#grad)" opacity="0"/>
+            <path d="M40,420 Q120,360 200,320 T360,260 T520,210 T700,150" fill="none" stroke="url(#lineGrad)" stroke-width="6" stroke-linecap="round" />
+            <circle cx="700" cy="150" r="7" fill="#7a5cff"/>
+            <circle cx="520" cy="210" r="7" fill="#22d1ee"/>
+            <text x="40" y="490" font-family="monospace" font-size="12" fill="#a3a3a3">trend trajectory visual</text>
+          </svg>
+          <div class="shape a" aria-hidden="true"></div>
+          <div class="shape b" aria-hidden="true"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="insights" aria-label="Insights" class="section-contrast">
+      <div class="section-inner">
+        <p class="lead">Trend focus</p>
+        <div class="grid-2" style="align-items: start;">
+          <article aria-label="Insight card 1">
+            <h3>Premium narrative built on credibility</h3>
+            <p>Kahf blends data integrity with editorial craft. Every claim is anchored to a signal, with concise explanation and a visual language that respects the reader’s time.</p>
+            <div class="card-cta">
+              <span aria-label="Trend category badge" style="font-size:12px;color:#aab; padding:6px 10px; border-radius:999px; background: rgba(122,92,255,.15);">Trend: Kahf</span>
+            </div>
+          </article>
+          <article aria-label="Insight card 2">
+            <h3>Editorial hierarchy that respects UX</h3>
+            <p>Generous whitespace, restrained animation, and purposeful sections guide users through insights without visual clutter or hype.</p>
+            <div class="card-cta">
+              <span class="cta" style="padding:8px 12px; border-radius:999px; text-decoration:none;">Read the philosophy</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" aria-label="Work" class="section-contrast">
+      <div class="section-inner">
+        <p class="lead">What we deliver</p>
+        <div class="grid-2">
+          <article aria-label="Work card 1">
+            <h3>Brand concept package</h3>
+            <p>A refined brand narrative, naming, and position that sits at the intersection of data literacy and premium aesthetics.</p>
+            <div class="card-cta">
+              <span class="cta" style="padding:8px 12px;border-radius:999px;">Brand guide</span>
+            </div>
+          </article>
+          <article aria-label="Work card 2">
+            <h3>Visual identity system</h3>
+            <p>A restrained color system, editorial typography, and adaptable UI elements designed for long-term use across platforms.</p>
+            <div class="card-cta">
+              <span class="cta" style="padding:8px 12px;border-radius:999px;">UI kit</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta" aria-label="Call to action" class="section-contrast" style="padding-bottom:120px;">
+      <div class="section-inner" style="text-align:center">
+        <p class="lead" style="letter-spacing:2px;margin-bottom:8px;">ACTION</p>
+        <h2 style="margin:0 0 14px;font-size:28px">Commission Kahf for your brand narrative</h2>
+        <p style="max-width:680px;margin:0 auto 28px;color:var(--muted)">We tailor the premium Kahf framework to your audience, blending credible data storytelling with a studio-grade design language.</p>
+        <a href="#overview" class="cta" style="font-weight:600" aria-label="Primary call to action">Start a dialogue</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo" aria-label="Footer">
+    <div class="section-inner" style="display:flex;gap:40px;flex-wrap:wrap;justify-content:space-between;align-items:center;">
+      <div style="display:flex;gap:12px;align-items:center">
+        <span aria-hidden="true" style="font-size:20px">K</span><span style="opacity:.8"> Kahf Studio</span>
+      </div>
+      <nav aria-label="Footer secondary navigation" style="flex:1;min-width:240px">
+        <ul style="display:flex;gap:16px;flex-wrap:wrap;padding:0;margin:0;list-style:none">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#insights">Insights</a></li>
+          <li><a href="#work">Work</a></li>
+        </ul>
+      </nav>
+      <p style="margin:0;color:var(--muted);font-size:12px">© Kahf Studio • All rights reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    // Lightweight keyboard nav helper for smooth scrolling
+    (function(){
+      const links = document.querySelectorAll('a[href^="#"]');
+      for(const a of links){
+        a.addEventListener('click', function(e){
+          const id = this.getAttribute('href').slice(1);
+          const el = document.getElementById(id);
+          if(el){
+            e.preventDefault();
+            el.scrollIntoView({behavior:'smooth', block:'start'});
+            history.pushState(null, '', '#'+id);
+          }
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>
